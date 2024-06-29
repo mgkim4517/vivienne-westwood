@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 @media (width <=768px) {
-
+/***** header *****/
   header .header-nav {
     height: 50px;
   }
@@ -22,15 +22,13 @@
     display: none;
   }
 
-  /***** header *****/
-
-  /*** main-menu ***/
   header .header-nav .global-menu li .search,
   header .header-nav .global-menu li .user,
   header .header-nav .global-menu li .menu {
     display: block;
   }
-
+  
+  /*** main-menu ***/
   .menu-container {
     width: 100%;
     position: fixed;
@@ -88,7 +86,7 @@
     font-size: 16px;
   }
 
-  /***** main *****/
+  /*** main ***/
   .main {
     padding-top: 100px;
   }
@@ -461,7 +459,7 @@
     width: 73%;
   }
 
-  /***** footer  *****/
+  /***** footer *****/
   footer {
     padding: 18px 0;
 

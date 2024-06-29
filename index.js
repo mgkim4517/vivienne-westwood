@@ -1,6 +1,6 @@
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
-
+// main
 gsap.to(".main-model", {
   scale: 1,
   scrollTrigger: {
@@ -14,8 +14,8 @@ gsap.to(".main-model", {
   duration: 5,
   ease: "power4.out"
 })
-// ===============================================main=========================================
 
+// gallery
 gsap.to(".gallery", {
   scrollTrigger: {
     trigger: ".gallery",
@@ -28,7 +28,6 @@ gsap.to(".gallery", {
   y: 0,
   duration: 3,
 });
-
 
 gsap.to(".group1", {
   scrollTrigger: {
@@ -54,31 +53,29 @@ gsap.to(".group2", {
   duration: 3,
 });
 
-//===============================================gallery=========================================
+// introduction
+gsap.utils.toArray(".write-in-text").forEach((text) => {
+  gsap.fromTo(text,
+    {
+      opacity: 0,
+      text: ""
+    },
+    {
+      opacity: 1,
+      duration: 2,
+      text: text.getAttribute("data-text"),
+      ease: "power2.inOut",
+      scrollTrigger: {
+        trigger: text,
+        start: "top bottom",
+        end: "top center",
+      }
+    }
+  );
+});
 
 
-  gsap.utils.toArray(".write-in-text").forEach((text) => {
-      gsap.fromTo(text, 
-          { 
-              opacity: 0, 
-              text: ""
-          }, 
-          { 
-              opacity: 1,
-              duration: 2, 
-              text: text.getAttribute("data-text"),
-              ease: "power2.inOut",
-              scrollTrigger: {
-                  trigger: text,
-                  start: "top bottom",
-                  end: "top center",
-              }
-          }
-      );
-  });
-
-// ================================================introduction======================================
-
+// best-collection
 gsap.to(".container1", {
   scrollTrigger: {
     trigger: ".container1",
@@ -114,9 +111,7 @@ gsap.to(".fixed2", {
   duration: 3,
 });
 
-
-// ================================================best-collection======================================
-
+// horizontal
 const total = document.querySelector(".horizontal-scroll");
 console.log(total.offsetWidth)
 
@@ -143,7 +138,7 @@ ScrollTrigger.create({
   markers: false
 });
 
-// ========================horizontal================================
+// slide
 gsap.to(".sun", {
   scrollTrigger: {
     trigger: ".product-slide",
@@ -159,28 +154,28 @@ document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
 
   gsap.utils.toArray(".fade-in-text").forEach((text) => {
-      gsap.fromTo(text, 
-          { opacity: 0 }, 
-          { 
-              opacity: 1, 
-              duration: 2, 
-              ease: "power2.inOut",
-              scrollTrigger: {
-                  trigger: text,
-                  start: "top 80%",
-                  end: "top 50%",
-                  toggleActions: "play none none none"
-              }
-          }
-      );
+    gsap.fromTo(text,
+      { opacity: 0 },
+      {
+        opacity: 1,
+        duration: 2,
+        ease: "power2.inOut",
+        scrollTrigger: {
+          trigger: text,
+          start: "top 80%",
+          end: "top 50%",
+          toggleActions: "play none none none"
+        }
+      }
+    );
   });
 });
 
-// ========================slider================================
+// gallery
 gsap.fromTo(
   '.gallery-group1 svg',
-  {opacity: 0.2 },
-  { 
+  { opacity: 0.2 },
+  {
     opacity: 1,
     duration: 0.5,
     scrollTrigger: {
@@ -192,8 +187,8 @@ gsap.fromTo(
 );
 gsap.fromTo(
   '.gallery-group2 svg',
-  {opacity: 0.2 },
-  { 
+  { opacity: 0.2 },
+  {
     opacity: 1,
     duration: 0.5,
     scrollTrigger: {
@@ -205,8 +200,8 @@ gsap.fromTo(
 );
 gsap.fromTo(
   '.gallery-group3 svg',
-  {opacity: 0.2 },
-  { 
+  { opacity: 0.2 },
+  {
     opacity: 1,
     duration: 0.5,
     scrollTrigger: {
@@ -240,29 +235,21 @@ gsap.utils.toArray('.rolled-over-txt').forEach((txt) => {
   );
 });
 
-// ========================gallery================================
+// forest
 gsap.to(".left-animation", {
   backgroundPosition: "top 0 left -20%, top 0 right -100%, bottom 0 left 50%", // Targeting the second background image to move vertically
-  ease: "none", 
+  ease: "none",
   scrollTrigger: {
-      trigger: ".forest",
-      start: "top 50%", 
-      end: "top 40%", 
-      scrub: true 
+    trigger: ".forest",
+    start: "top 50%",
+    end: "top 40%",
+    scrub: true
   },
   duration: 3,
 });
 
-
-
-
-
-
-
-// ========================forest================================
-
-
-var swiper = new Swiper(".mySwiper", {
+// swiper
+let swiper = new Swiper(".mySwiper", {
   slidesPerView: 1,
   spaceBetween: 30,
   loop: true,
@@ -271,10 +258,5 @@ var swiper = new Swiper(".mySwiper", {
     clickable: true,
   },
 });
-// ========================swiper================================
 
 $('a[href="#"]').on('click', e => e.preventDefault());
-
-
-
-
