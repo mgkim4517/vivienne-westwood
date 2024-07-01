@@ -118,6 +118,10 @@
   }
 
   /*** besr-collection ***/
+  .best-collection {
+    overflow: hidden;
+  }
+
   .best-collection .title {
     width: 53%;
     margin-left: 16.4%;
@@ -334,6 +338,7 @@
   /*** division ***/
   .division {
     padding-bottom: 40px;
+    overflow: hidden;
   }
 
   .division .sentence {
